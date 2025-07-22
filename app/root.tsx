@@ -8,21 +8,31 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { ThemeChangerContext, type PossibleThemes } from "./contexts/themeChanger";
 import "./app.css";
+import { useState } from "react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  let [theme, setTheme] = useState("light")
+
+  const changeTheme = (to: PossibleThemes) => {
+    setTheme(to)
+  }
+
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
+    <ThemeChangerContext value={changeTheme}>
+      <html lang="en" className={theme}>
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </head>
+        <body>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </html> 
+    </ThemeChangerContext>
   );
 }
 

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import type { Route } from "./+types/home";
+import { ThemeChangerContext } from "~/contexts/themeChanger";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,9 +10,18 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  let changeTheme = useContext(ThemeChangerContext)
+  const toggleThemeChanger = () => {
+    let currentColor = (document.querySelector("html[class]") as HTMLElement).getAttribute("class")
+    if(currentColor === "dark") {
+      return changeTheme("light")
+    }
+    changeTheme("dark")
+  }
+
   return (
     <div className="w-screen h-screen flex grow justify-center items-center">
-      
+      <button className="border border-black p-5 rounded-md cursor-pointer dark:border-white dark:text-white" onClick={toggleThemeChanger}>Dark</button>
     </div>
   );
 }
