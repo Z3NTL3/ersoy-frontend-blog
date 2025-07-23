@@ -10,21 +10,19 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  let changeTheme = useContext(ThemeChangerContext)
+  let changer = useContext(ThemeChangerContext)
   const toggleThemeChanger = () => {
     let currentColor = (document.querySelector("html[class]") as HTMLElement).getAttribute("class")
     if(currentColor === "dark") {
-      localStorage.setItem("theme", "light")
-      return changeTheme("light")
+      return changer.change("light")
     }
     
-    localStorage.setItem("theme", "dark")
-    changeTheme("dark")
+    changer.change("dark")
   }
 
   return (
-    <div className="w-screen h-screen flex grow justify-center items-center">
-      <button className="border border-black p-5 rounded-md cursor-pointer dark:border-white dark:text-white" onClick={toggleThemeChanger}>Dark</button>
+    <div className="w-screen h-screen">
+      
     </div>
   );
 }

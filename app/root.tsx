@@ -22,6 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   let [loading, setLoading] = useState(true)
 
   const changeTheme = (to: PossibleThemes) => {
+    localStorage.setItem("theme", to)
     setTheme(to)
   }
 
@@ -58,13 +59,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
   }, [loading]) // run everytime on pre-load
 
   return (
-    <ThemeChangerContext value={changeTheme}>
+    <ThemeChangerContext value={{
+      currentTheme: theme as PossibleThemes,
+      change: changeTheme
+    }}>
       <html lang="en" className={theme}>
         <head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
-        <body>
+        <body className="overflow-x-hidden">
           { loading ? <Loading /> : children}
           <ScrollRestoration />
           <Scripts />
