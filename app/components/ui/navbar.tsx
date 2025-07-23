@@ -54,10 +54,10 @@ const Navbar = () => {
 
                 {/* items */}
                 <div className="flex grow justify-center gap-x-8 text-[16px] font-normal text-[#3B3C4A] dark:text-white">
-                    <a href="#">Anasayfa</a>
-                    <a href="#">Kategoriler</a>
-                    <a href="#">Güncel</a>
-                    <a href="#">Kitaplarim</a>
+                    <a className="p-2" href="#">Anasayfa</a>
+                    <a className="p-2" href="#">Kategoriler</a>
+                    <a className="p-2" href="#">Güncel</a>
+                    <a className="p-2" href="#">Kitaplarim</a>
                 </div>
                 {/* end */}
 
