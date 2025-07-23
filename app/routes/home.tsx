@@ -14,8 +14,11 @@ export default function Home() {
   const toggleThemeChanger = () => {
     let currentColor = (document.querySelector("html[class]") as HTMLElement).getAttribute("class")
     if(currentColor === "dark") {
+      localStorage.setItem("theme", "light")
       return changeTheme("light")
     }
+    
+    localStorage.setItem("theme", "dark")
     changeTheme("dark")
   }
 

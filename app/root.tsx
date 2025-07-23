@@ -1,23 +1,61 @@
 import {
   isRouteErrorResponse,
-  Links,
-  Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
 import type { Route } from "./+types/root";
 import { ThemeChangerContext, type PossibleThemes } from "./contexts/themeChanger";
-import "./app.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Loading } from "./components/ui/loading";
+import { gsap } from 'gsap';  
+import { useGSAP } from '@gsap/react';
+import { MorphSVGPlugin, ScrambleTextPlugin } from "gsap/all";
+import "./app.css"
 
-export function Layout({ children }: { children: React.ReactNode }) {
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(MorphSVGPlugin) 
+gsap.registerPlugin(ScrambleTextPlugin)
+
+export function Layout({ children }: { children: React.ReactNode }) {  
   let [theme, setTheme] = useState("light")
+  let [loading, setLoading] = useState(true)
 
   const changeTheme = (to: PossibleThemes) => {
     setTheme(to)
   }
+
+  // set preference by localStorage or fallback to browser's color mode choice
+  useEffect(() => {
+    let currentTheme = localStorage.getItem("theme")
+    let pref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
+
+    if(currentTheme){
+      setTheme(currentTheme)
+    } else {
+      setTheme(pref)
+    }
+  }, [theme])
+
+  useEffect(() => {
+    if(!loading) 
+      return
+
+    gsap.to("#fin", {duration: 1.2, morphSVG:{
+      shape: "#full",
+      type: "rotational"
+    }})
+    gsap.to("#loading", {
+      duration: 1, 
+      scrambleText: "Yükleniyor"
+    });
+
+    gsap.to("#author", {
+      duration: 1,
+      scrambleText: "Made by z3ntl3"
+    })
+    setTimeout(() => setLoading(false), 1000 )
+  }, [loading]) // run everytime on pre-load
 
   return (
     <ThemeChangerContext value={changeTheme}>
@@ -27,7 +65,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
         <body>
-          {children}
+          { loading ? <Loading /> : children}
           <ScrollRestoration />
           <Scripts />
         </body>
