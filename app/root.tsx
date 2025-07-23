@@ -26,7 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     setTheme(to)
   }
 
-  // set preference by localStorage or fallback to browser's color mode choice
+  // set preference by localStorage or fallback to browser's color choice
   useEffect(() => {
     let currentTheme = localStorage.getItem("theme")
     let pref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"

@@ -45,7 +45,7 @@ const Navbar = () => {
 
     return (
         <div className="flex justify-center justify-items-center items-center w-full h-fit">
-            <div className="flex justify-start items-center w-[70%] h-[80px]  p-4">
+            <div className="flex fixed mt-20 justify-start items-center w-[70%] h-[80px]  p-4">
                 {/* logo */}
                 <div className="flex">
                     <img width={150} src={getCorrectScheme} alt="logo" />
