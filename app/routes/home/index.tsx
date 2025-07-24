@@ -58,7 +58,9 @@ export default function Home() {
         {stylesheet}
       </style>
 
-      <div className="flex justify-center items-center w-full">
+
+      <div className="flex justify-center" id="pagination"></div>
+      <div className="relative flex justify-center items-center w-full">
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow, FreeMode]}
@@ -69,9 +71,13 @@ export default function Home() {
             prevEl: "#prev"
           }}
           speed={2000}
-          pagination={true}
+          pagination={{
+            el: "#pagination",
+            type: "progressbar",
+
+          }}
           scrollbar={{ draggable: true }}
-          className="w-[800px] h-[400px]"
+          className="w-[800px] h-[400px] light-shadow"
           parallax={true}
           effect="coverflow"
           freeMode={{
@@ -85,8 +91,7 @@ export default function Home() {
           </SwiperSlide>
           <SwiperSlide className="relative">
             <img  className="w-full h-full rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCbgd6_OdP3o4h-Qzm8K6PPhZf5DjL0Xn2Gg&s" alt="" />
-          </SwiperSlide>
-          <div className="swiper-pagination-bullet"></div>
+          </SwiperSlide>=
         </Swiper>
       </div>
     </>
