@@ -71,7 +71,7 @@ export default function Home() {
           speed={2000}
           pagination={true}
           scrollbar={{ draggable: true }}
-          className="w-[800px] h-[400px] dark:drop-shadow-xl rounded-xl"
+          className="w-[800px] h-[400px]"
           parallax={true}
           effect="coverflow"
           freeMode={{
@@ -84,7 +84,7 @@ export default function Home() {
             <img className="w-full h-full rounded-xl" src="./img/desk.svg" alt="desk" />
           </SwiperSlide>
           <SwiperSlide className="relative">
-            <img  className="w-full h-full rounded-xl p-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCbgd6_OdP3o4h-Qzm8K6PPhZf5DjL0Xn2Gg&s" alt="" />
+            <img  className="w-full h-full rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCbgd6_OdP3o4h-Qzm8K6PPhZf5DjL0Xn2Gg&s" alt="" />
           </SwiperSlide>
           <div className="swiper-pagination-bullet"></div>
         </Swiper>

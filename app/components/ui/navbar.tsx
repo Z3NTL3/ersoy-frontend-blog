@@ -9,7 +9,7 @@ const Navbar = ({children}) => {
     let getter = useContext(ThemeChangerContext)
     let getCorrectScheme = getter.currentTheme === "dark" ? "./logo-dark.svg" : "./logo.svg"
     let [search, setSearch] = useState("")
-    
+
     useGSAP(() => {
         // theme anim only if dark
         if(getter.currentTheme !== "dark")
@@ -70,7 +70,7 @@ const Navbar = ({children}) => {
                             outline: "none"
                         }} value={search} onChange={(e) => {
                             setSearch(e.currentTarget.value)
-                        }} type="text" placeholder="Ara" className="px-4 flex bg-[#F4F4F5] dark:bg-[#242535] min-w-[100px] max-w-[105px] p-2 rounded-lt-[5px] rounded-bl-[5px]"/>
+                        }} type="text" placeholder="Ara" className="px-4 flex text-black dark:text-gray-400 bg-[#F4F4F5] dark:bg-[#242535] min-w-[100px] max-w-[105px] p-2 rounded-lt-[5px] rounded-bl-[5px]"/>
                         
                         <img src="./icons/search.svg" alt="search" width={35} className="cursor-pointer bg-[#F4F4F5] dark:bg-[#242535] p-2 rounded-tr-[5px] rounded-br-[5px]" />
                     </div>

@@ -24,7 +24,7 @@ const Loading = () => {
                         </defs>
                     </svg>
                     
-                    <h3 className="text-md font-semibold ml-5 text-center mt-5" id="loading">Zamanin var mi?</h3>
+                    <h3 className="text-md  text-black dark:text-white font-semibold ml-5 text-center mt-5" id="loading">Zamanin var mi?</h3>
                     <p className="absolute left-1/2 transform -translate-x-1/2 mx-5 bottom-5 font-medium text-[12px] text-[#0575E6] " id="author">z3ntl3</p>
                 </div>
             }
