@@ -1,5 +1,6 @@
 import { type JSX } from "react";
 import { Outlet } from "react-router";
+import { Navbar } from "~/components/ui/navbar";
 
 export default function HomeMetaLayout(): JSX.Element {
     return (

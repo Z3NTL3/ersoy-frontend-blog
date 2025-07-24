@@ -11,7 +11,14 @@ import { Loading } from "./components/ui/loading";
 import { gsap } from 'gsap';  
 import { useGSAP } from '@gsap/react';
 import { MorphSVGPlugin, ScrambleTextPlugin } from "gsap/all";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+// styles
 import "./app.css"
+
+library.add(fab, faCheckSquare, faCoffee)
 
 gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(MorphSVGPlugin) 
