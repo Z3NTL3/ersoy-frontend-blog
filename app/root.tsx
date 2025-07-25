@@ -81,7 +81,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Links/>
           <Meta/>
         </head>
-        <body className="overflow-x-hidden">=
+        <body className="overflow-x-hidden">
           { loading ? <Loading/> :   
             <Navbar>
               <div className="mt-20"></div> 
@@ -100,6 +100,7 @@ export default function App() {
   return <Outlet />;
 }
 
+// todo
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
