@@ -79,7 +79,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         </head>
         <body className="overflow-x-hidden">
-          
           <Navbar>
           { loading ? <Loading/> :   
               <>
