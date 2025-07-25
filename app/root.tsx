@@ -79,11 +79,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         </head>
         <body className="overflow-x-hidden">
+
           <Navbar>
-            
-            { loading ? <Loading/> : 
+          { loading ? <Loading/> :   
               <>
-                <div className="mt-20"></div>  
+                <div className="mt-20"></div> 
                 {children}
               </>
             }
