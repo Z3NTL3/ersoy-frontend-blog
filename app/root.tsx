@@ -1,3 +1,4 @@
+import "./app.css"
 import {
   isRouteErrorResponse,
   Outlet,
@@ -12,13 +13,12 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { MorphSVGPlugin, ScrambleTextPlugin } from "gsap/all";
 import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-// styles
-import "./app.css"
-
-library.add(fab, faCheckSquare, faCoffee)
+library.add(fas, far, fab)
 
 gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(MorphSVGPlugin) 

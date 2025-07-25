@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ThemeChangerContext } from "~/contexts/themeChanger";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -47,8 +47,8 @@ const Navbar = ({children}) => {
 
     return (
         <NavbarSearchContext value={search}>
-            <div className="flex justify-center justify-items-center items-center w-full h-fit">
-                <div className="flex fixed mt-20 justify-start items-center w-[70%] h-[80px]  p-4">
+            <div id="navbar" className="flex justify-center justify-items-center items-center w-full h-fit">
+                <div className="flex justify-start items-center w-[70%] h-[80px] p-4" style={{zIndex: 100}}>
                     {/* logo */}
                     <div className="flex">
                         <img width={150} src={getCorrectScheme} alt="logo" />
@@ -85,7 +85,7 @@ const Navbar = ({children}) => {
                     {/* end */}
                 </div>
             </div>
-            <div className="mb-40"></div>
+            <div className="mb-10"></div>
             {children}
         </NavbarSearchContext>
     );
