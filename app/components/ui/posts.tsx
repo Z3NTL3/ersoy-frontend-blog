@@ -39,8 +39,10 @@ export default function Posts({posts, loaded}: {posts: Array<IPosts>, loaded: Bo
         )
     })
     return (
-        <div className="flex flex-col items-start w-full px-80 mt-10 mb-20">
-            <h1 className="text-black dark:text-white font-bold text-[20px]">Güncel Yazılar</h1>
+        <div>
+
+            <h1 className="text-black dark:text-white  font-bold text-[20px] text-left mt-5">Güncel Yazılar</h1>
+            <div className="flex flex-col items-center place-content-center w-full">
             <div className="grid grid-cols-3 justify-center items-center mt-2 gap-x-15 gap-y-5">
                 {postsList}
                 {postsList.length === 0 && 
@@ -50,6 +52,7 @@ export default function Posts({posts, loaded}: {posts: Array<IPosts>, loaded: Bo
             <div className="flex justify-center mt-10 w-full">
                 <p className="text-[#696A75] border p-2  rounded-md border-[#696A75] text-sm cursor-pointer">Tümünü göster</p>
             </div>
+        </div>
         </div>
     )
 }
