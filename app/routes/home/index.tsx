@@ -81,10 +81,7 @@ export default function Home() {
       <style href="home-style">
         {stylesheet}
       </style>
-       <script>
-        alert('gello')
-      </script>
-      <div className="relative flex flex-col justify-center items-center w-full h-full">
+      <div className="relative flex flex-col justify-center items-center w-full h-full mt-8">
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow, FreeMode]}

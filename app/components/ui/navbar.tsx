@@ -57,7 +57,7 @@ const Navbar = ({children}) => {
                     {/* end */}
 
                     {/* items */}
-                    <div className="flex grow justify-center gap-x-8 text-[16px] font-normal text-[#3B3C4A] dark:text-white">
+                    <div id="nav-links" className="flex grow justify-center gap-x-8 text-[16px] font-normal text-[#3B3C4A] dark:text-white">
                         <a className="p-2" href="#">Anasayfa</a>
                         <a className="p-2" href="#">Kategoriler</a>
                         <a className="p-2" href="#">Güncel</a>
@@ -87,7 +87,6 @@ const Navbar = ({children}) => {
                 </div>
             </div>
             <script src="/scripts/scroll.js" onLoad={() => console.log("script loaded")}/>
-            <div className="mb-10"></div>
             {children}
         </NavbarSearchContext>
     );

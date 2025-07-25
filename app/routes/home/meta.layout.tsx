@@ -6,7 +6,8 @@ export default function HomeMetaLayout(): JSX.Element {
         <>
             <title>Blog — Anasayfa - Mehdi Ersoy</title>
             <meta name="description" content="Some meta shit here" />
-            <Outlet />
+            
+            <Outlet/>
         </>
     );
 };
