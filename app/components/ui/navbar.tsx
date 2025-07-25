@@ -85,9 +85,9 @@ const Navbar = ({children}) => {
                     </div>
                     {/* end */}
                 </div>
-            </div>
+            </div>  
             {children}
-            <script src="/scripts/scroll.js" type="text/javascript" onLoad={() => console.log("script loaded")}/>
+            <script src="/scripts/scroll.js" async type="text/javascript" onLoad={() => console.log("script loaded")}/>
         </NavbarSearchContext>
     );
 }

@@ -81,15 +81,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Links/>
           <Meta/>
         </head>
-        <body className="overflow-x-hidden">
-          
+        <body className="overflow-x-hidden">=
           { loading ? <Loading/> :   
-              <Navbar>
-                <div className="mt-20"></div> 
-                {children}
-              </Navbar>
+            <Navbar>
+              <div className="mt-20"></div> 
+              {children}
+            </Navbar>
           }
-          
           <ScrollRestoration />
           <Scripts />
         </body>
