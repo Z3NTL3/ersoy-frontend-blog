@@ -1,6 +1,8 @@
 import "./app.css"
 import {
   isRouteErrorResponse,
+  Links,
+  Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -76,17 +78,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <title>Blog — AliErsoy</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+          <Links/>
+          <Meta/>
         </head>
         <body className="overflow-x-hidden">
-          <Navbar>
+          
           { loading ? <Loading/> :   
-              <>
+              <Navbar>
                 <div className="mt-20"></div> 
                 {children}
-              </>
+              </Navbar>
           }
-          </Navbar>
+          
           <ScrollRestoration />
           <Scripts />
         </body>
