@@ -10,7 +10,7 @@ export default function Posts({posts, loaded}: {posts: Array<IPosts>, loaded: Bo
                     <div className="hover:scale-105 cursor-pointer flex flex-col border border-[#E8E8EA]/80 dark:border-[#242535] text-black w-[280px] p-3 rounded-lg min-h-[300px]">
                         <img className="rounded-lg" src={post.imgSrc} alt="" />
                         {/* badges */}
-                        <span className="text-[#4B6BFB] bg-[#4B6BFB]/10 w-fit p-1 rounded-md px-4 mt-3 font-medium text-[15px]">Mockup</span>
+                        <span className="text-[#4B6BFB] bg-[#4B6BFB]/10 w-fit p-1 rounded-md px-4 mt-3 font-medium text-[12px]">Mockup</span>
                         {/* end */}
 
                         {/* title */}
@@ -18,7 +18,7 @@ export default function Posts({posts, loaded}: {posts: Array<IPosts>, loaded: Bo
                         {/* end */}
 
                         {/* author */}
-                        <div className="flex items-center gap-x-2 mt-2 px-1">
+                        <div className="flex grow  items-end gap-x-2 px-1 mt-2">
                             <img className="rounded-full border border-black/10" width={25} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUOdfo4lewXJYT_2xPo_Xu2Lj6XPn78X9UJA&s" alt="" />
                             <span className="text-black/50 font-medium text-[14px] dark:text-gray-500">Mehdi Ersoy</span>
 

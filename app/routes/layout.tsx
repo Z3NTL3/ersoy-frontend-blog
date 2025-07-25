@@ -7,6 +7,7 @@ export default function RootLayout(): JSX.Element {
     return (
         <>
             <Navbar>
+                <div className="mt-20"></div>
                 <Outlet/>
             </Navbar>
         </>

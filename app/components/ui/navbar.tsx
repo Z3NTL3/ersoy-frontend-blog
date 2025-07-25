@@ -47,8 +47,9 @@ const Navbar = ({children}) => {
 
     return (
         <NavbarSearchContext value={search}>
-            <div id="navbar" className="flex justify-center justify-items-center items-center w-full h-fit">
-                <div className="flex justify-start items-center w-[70%] h-[80px] p-4" style={{zIndex: 100}}>
+            {/* <div className="flex justify-center" id="pagination"></div> */}
+            <div className="fixed top-0 flex justify-center justify-items-center items-center w-full h-fit" style={{zIndex: 100}}>
+                <div id="navbar" className="flex justify-start items-center w-[70%] h-[80px] p-4">
                     {/* logo */}
                     <div className="flex">
                         <img width={150} src={getCorrectScheme} alt="logo" />
@@ -85,6 +86,7 @@ const Navbar = ({children}) => {
                     {/* end */}
                 </div>
             </div>
+            <script src="/scripts/scroll.js" onLoad={() => console.log("script loaded")}/>
             <div className="mb-10"></div>
             {children}
         </NavbarSearchContext>
