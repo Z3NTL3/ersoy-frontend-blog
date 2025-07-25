@@ -17,6 +17,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { Navbar } from "./components/ui/navbar";
 
 library.add(fas, far, fab)
 
@@ -75,11 +76,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <title>Blog — AliErsoy</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <script src="http://localhost:8097"></script>
 
         </head>
         <body className="overflow-x-hidden">
-          { loading ? <Loading /> : children}
+          <Navbar>
+            <div className="mt-20"></div>
+            { loading ? <Loading /> : children}
+          </Navbar>
+          <div className="mb-20"></div>
           <ScrollRestoration />
           <Scripts />
         </body>

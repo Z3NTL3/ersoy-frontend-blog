@@ -9,7 +9,7 @@ const Navbar = ({children}) => {
     let getter = useContext(ThemeChangerContext)
     let getCorrectScheme = getter.currentTheme === "dark" ? "./logo-dark.svg" : "./logo.svg"
     let [search, setSearch] = useState("")
-
+    
     useGSAP(() => {
         // theme anim only if dark
         if(getter.currentTheme !== "dark")
@@ -47,8 +47,8 @@ const Navbar = ({children}) => {
 
     return (
         <NavbarSearchContext value={search}>
-            {/* <div className="flex justify-center" id="pagination"></div> */}
-            <div className="fixed top-0 flex justify-center justify-items-center items-center w-full h-fit" style={{zIndex: 100}}>
+            <div className="flex justify-center" id="pagination"></div>
+            <div className="fixed top-2 flex justify-center justify-items-center items-center w-full h-fit" style={{zIndex: 100}}>
                 <div id="navbar" className="flex justify-start items-center w-[70%] h-[80px] p-4">
                     {/* logo */}
                     <div className="flex">

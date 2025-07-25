@@ -81,6 +81,9 @@ export default function Home() {
       <style href="home-style">
         {stylesheet}
       </style>
+       <script>
+        alert('gello')
+      </script>
       <div className="relative flex flex-col justify-center items-center w-full h-full">
         <Swiper
           // install Swiper modules
