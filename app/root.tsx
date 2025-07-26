@@ -88,6 +88,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               {children}
             </Navbar>
           }
+          <div className="mb-20"></div>
           <ScrollRestoration />
           <Scripts />
         </body>
